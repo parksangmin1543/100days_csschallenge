@@ -1,0 +1,153 @@
+@charset "UTF-8";
+/* // delete the following line if no text is used */
+/* // edit the line if you wanna use other fonts */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+/* https://dragonza.io/how-to-create-animated-hamburger-icon-with-css/ */
+/* // use only the available space inside the 400x400 frame */
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #25854d;
+  color: #333;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 매크로키 적극사용해보기 */
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.menubar {
+  position: relative;
+  height: 90px;
+  width: 100px;
+  cursor: pointer;
+}
+.menubar .one,
+.menubar .two,
+.menubar .three {
+  position: absolute;
+  top: 0;
+  height: 10px;
+  width: 100%;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 3px 3px 3px black;
+  transition: background-color 0.2s ease-in-out;
+}
+.menubar .one .one,
+.menubar .two .one,
+.menubar .three .one {
+  animation: animate-one-rev 0.7s ease-in-out;
+}
+.menubar .one .two,
+.menubar .two .two,
+.menubar .three .two {
+  margin: 14px 0;
+  animation: animate-two-rev 0.7s ease-in-out;
+  top: 30%;
+}
+.menubar .one .three,
+.menubar .two .three,
+.menubar .three .three {
+  animation: animate-three-rev 0.7s ease-in-out;
+  top: 60%;
+}
+.menubar.active {
+  box-shadow: none;
+}
+.menubar.active .one {
+  animation: animate-one 0.7s cubic-bezier(0.3, 1, 0.7, 1) forwards;
+}
+.menubar.active .two {
+  animation: animate-two 0.7s cubic-bezier(0.3, 1, 0.7, 1) forwards;
+}
+.menubar.active .three {
+  animation: animate-three 0.7s cubic-bezier(0.3, 1, 0.7, 1) forwards;
+}
+
+.no-animation {
+  -webkit-animation: none !important;
+  animation: none !important;
+}
+
+@keyframes animate-one-rev {
+  0% {
+    transform: translate3d(0, 20px, 0) rotate(45deg);
+  }
+  50% {
+    transform: translate3d(0, 20px, 0) rotate(0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+}
+@keyframes animate-two-rev {
+  0% {
+    transform: translate3d(0, 0px, 0) rotate(0);
+  }
+  50% {
+    transform: translate3d(0, 0px, 0) rotate(0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+}
+@keyframes animate-three-rev {
+  0% {
+    transform: translate3d(0, -20px, 0) rotate(-45deg);
+  }
+  50% {
+    transform: translate3d(0, -20px, 0) rotate(0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+}
+@keyframes animate-one {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0, 22px, 0) rotate(0);
+  }
+  100% {
+    transform: translate3d(0, 22px, 0) rotate(45deg);
+  }
+}
+@keyframes animate-two {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+@keyframes animate-three {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0, -22px, 0) rotate(0);
+  }
+  100% {
+    transform: translate3d(0, -22px, 0) rotate(135deg);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

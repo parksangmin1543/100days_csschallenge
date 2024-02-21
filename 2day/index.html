@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <head>
-	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
     <body>
       <div class="frame">
         <div class="center">
           <div class="menubar">
-            <div class="one">
-            <div class="two">
-            <div class="three">
+            <div class="one no-animation"></div>
+            <div class="two no-animation"></div>
+            <div class="three no-animation"></div>
           </div>
         </div>
       </div>
+      <script>
+        $(document).ready(function() {
+            $('.menubar').bind('click', function() {
+                $(this).toggleClass('active');
+                $(this).find('div').removeClass('no-animation');
+            });
+        });
+      </script>
     </body>
 </html> 
